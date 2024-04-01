@@ -17,6 +17,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   carousel_slider: ^4.2.1
+  go_router: ^13.2.2
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +29,12 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
+    - assets/home/home1.jpg
+    - assets/home/home2.jpg
+    - assets/home/home3.jpg
+    - assets/home/home4.jpg
+    - assets/home/home5.jpg
+    - assets/home/home6.jpg
     - assets/home/home7.jpg
 
 

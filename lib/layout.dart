@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'card2.dart';
+import 'history.dart';
 import 'card3.dart';
 
 class Layout extends StatefulWidget {
@@ -15,7 +15,7 @@ class _LayoutState extends State<Layout> {
 
   static final List<Widget> _pages = [
     const Home(),
-    const Card2(),
+    const History(),
     const Card3(),
     const Card3(),
     const Card3(),
@@ -24,48 +24,6 @@ class _LayoutState extends State<Layout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(42.0), // Đặt kích thước ưa thích là 50.0
-        child: AppBar(
-          backgroundColor: Colors.blue, // Màu nền xanh
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: 4.0),
-                child: Image.asset(
-                  'assets/logo.png', // Thay đổi đường dẫn đến hình ảnh của logo của bạn
-                  height: 100,
-                  width: 100,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ],
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(
-                Icons.search,
-                color: Colors.white,
-                size: 30,
-              ),
-              onPressed: () {
-                // Xử lý sự kiện khi nhấn vào biểu tượng tìm kiếm
-              },
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.notifications,
-                color: Colors.white,
-                size: 30,
-              ),
-              onPressed: () {
-                // Xử lý sự kiện khi nhấn vào biểu tượng thông báo
-              },
-            ),
-          ],
-        ),
-      ),
       body: IndexedStack(
         index: _selectedIndex,
         children: _pages,

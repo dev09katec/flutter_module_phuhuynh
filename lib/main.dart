@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import 'home.dart';
+import 'history.dart';
 import 'layout.dart';
 
 void main() {
@@ -11,13 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Kafood',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
-      ),
-      home: const Layout(),
+    return MaterialApp.router(
+      routerConfig: router,
     );
   }
 }
+
+final router = GoRouter(routes: [
+  GoRoute(path: '/', builder: (_, __) => const Layout(), routes: [
+    GoRoute(path: 'home', builder: (_, __) => const Home()),
+    GoRoute(path: 'histories', builder: (_, __) => const History())
+  ])
+]);
